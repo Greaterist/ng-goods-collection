@@ -1,0 +1,16 @@
+<form class="form" [formGroup]="goodsCollection">
+    <div formArrayName="goods">
+      <mat-card class="form__card" *ngFor="let good of getGoodsArray().controls; let i = index" [formGroupName]="i">
+        <mat-form-field>
+          <mat-label>название товара: </mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+        <app-price-control formControlName="price"></app-price-control>
+        <app-date-control formControlName="months"></app-date-control>
+        <button mat-flat-button color="warn" type="button" (click)="removeGoods(i)">Remove</button>
+      </mat-card>
+    </div>
+    
+    <button mat-button type="button" (click)="addGoods()">Add Goods</button>
+    <button mat-button type="button" [disabled]="goodsCollection.invalid" (click)="logResult()">log result</button>
+</form>

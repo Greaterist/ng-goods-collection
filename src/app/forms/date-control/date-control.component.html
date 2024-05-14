@@ -1,0 +1,5 @@
+<mat-form-field>
+    <mat-label for="months"> месяц: </mat-label>  
+    <input matInput type="text" name="years" [(ngModel)]="years" disabled>   
+    <input matInput type="number" name="months" [ngModel]="months" (input)="handleInputMonths($event)" focus>
+</mat-form-field>

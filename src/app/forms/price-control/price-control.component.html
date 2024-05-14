@@ -1,0 +1,4 @@
+<mat-form-field>
+    <mat-label for="price">цена: </mat-label>
+    <input matInput type="text" name="price" [ngModel]="price | number" (input)="onInput($event)">
+</mat-form-field>
